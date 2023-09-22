@@ -46,7 +46,7 @@ def stop_and_process_audio():
 
     try:
         # Using CMU Sphinx
-        text = recognizer.recognize_google(audio)
+        text = recognizer.recognize_sphinx(audio)
         key_controller.type(text)
         print('Voice typing activated!')
     except sr.UnknownValueError:
@@ -56,7 +56,7 @@ def stop_and_process_audio():
 
 
 
-hotkey = {keyboard.Key.ctrl, keyboard.Key.alt, keyboard.KeyCode.from_char('v')}
+hotkey = {keyboard.Key.f9}
 current_keys = set()
 
 def on_key_down(key):
